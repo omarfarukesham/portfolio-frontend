@@ -2,10 +2,10 @@ import Hero from "@/components/Hero";
 import ProudPartnerSection from "@/components/Partner";
 import BlogsPage from "./blogs/page";
 import TestimonialPage from "@/components/Testimonial";
-import ContactSection from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SkillsSection from "@/components/Skills";
 import Experience from "@/components/Experience";
+import ContactNow from "@/components/contactNow";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <BlogsPage />
       <SkillsSection />
       <TestimonialPage />
-      <ContactSection />
+      <ContactNow />
       <Footer />
      
     </div>
