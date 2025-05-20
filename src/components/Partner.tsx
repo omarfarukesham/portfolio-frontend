@@ -34,7 +34,7 @@ const ProudPartnerSection = () => {
     <section id="partners" className="py-16 bg-gray-100 dark:bg-[#B0C4DE]">
       <div className="container mx-auto px-8">
         <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-black mb-8">
-          Working Proudly with my Valuable Clients
+          Working Proudly with Global Partners
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           {partnerCountries.map((partner) => (

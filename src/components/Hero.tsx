@@ -5,30 +5,28 @@ import profileImg from '@/assets/devOmar.png'
 const Hero = () => {
   return (
     <section className="w-full mx-auto flex flex-col md:flex-row items-center justify-between py-12 px-6 bg-gray-50">
-      {/* Left Side: Text */}
-      <div className="md:w-1/3 space-y-6 lg:ml-20">
+       <div className="md:w-1/3 space-y-6 lg:ml-20">
         <h1 className="text-4xl font-bold text-gray-900">
-         Hi,
-         <br />
-          I am Omar Faruk 
+          Hi,
+          <br />
+          IM Omar Faruk
         </h1>
         <p className="text-lg text-gray-600">
-        Experienced Full-stack Developer with 3+ Years in SAP and Procurement
-        Streamlining administrative operations, managing vendor registration,
-         and ensuring compliance with company policies. Skilled in SAP support,
-         troubleshooting, and improving system efficiency to enhance workflow and operational success.
+          Full-stack developer specializing in modern web technologies. I build responsive, 
+          performant applications using React, Next.js, TypeScript, and Node.js. 
+          Passionate about creating efficient solutions with clean code and great user experiences.
         </p>
-      <button
-    className="bg-gradient-to-r from-black to-[#08a9af] hover:from-[#08a9af] hover:to-black text-white px-6 py-2 rounded-lg transition duration-300"
-    onClick={() => {
-        const link = document.createElement('a');
-        link.href = '/Resume.pdf'; 
-        link.download = 'anasResume.pdf'; 
-        link.click();
-    }}
->
-    View Resume
-</button>
+        <button
+          className="bg-gradient-to-r from-black to-[#08a9af] hover:from-[#08a9af] hover:to-black text-white px-6 py-2 rounded-lg transition duration-300"
+          onClick={() => {
+            const link = document.createElement('a');
+            link.href = '/Resume.pdf'; 
+            link.download = 'omarResume.pdf'; 
+            link.click();
+          }}
+        >
+          View Resume
+        </button>
       </div>
 
   
