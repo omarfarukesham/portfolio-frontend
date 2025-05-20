@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import profileImg from '@/assets/removebg.png'; 
+import profileImg from '@/assets/devOmar.png'; 
 import Link from 'next/link';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
