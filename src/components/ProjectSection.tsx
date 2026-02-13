@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { FiChevronDown, FiChevronUp, FiX } from 'react-icons/fi';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
@@ -206,16 +206,8 @@ const ProjectsSection = () => {
 
       {/* Project Details Modal */}
       {showDetails && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4 overflow-y-auto">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
-            <button
-              onClick={() => setShowDetails(null)}
-              className="absolute top-4 right-4 text-gray-500 dark:text-gray-300 hover:text-red-500 transition-colors p-2"
-              aria-label="Close modal"
-            >
-              <FiX className="text-2xl" />
-            </button>
-            
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50  overflow-y-auto mt-5">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto relative">
             <div className="relative h-64 w-full">
               <Image
                 src={showDetails.thumbnail}
@@ -225,6 +217,7 @@ const ProjectsSection = () => {
                 sizes="100vw"
               />
             </div>
+            
             
             <div className="p-8">
               <div className="flex justify-between items-start mb-6">
@@ -261,7 +254,7 @@ const ProjectsSection = () => {
               {showDetails.tags && showDetails.tags.length > 0 && (
                 <div className="mb-8">
                   <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
-                    Tags
+                    Tagss
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {showDetails.tags.map((tag, index) => (
@@ -300,10 +293,22 @@ const ProjectsSection = () => {
                   </a>
                 )}
               </div>
-              
-              <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400">
-                <p>Created: {new Date(showDetails.createdAt).toLocaleDateString()}</p>
+                  
+              <div className="flex justify-between mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400">
+                <div>
+                 <p>Created: {new Date(showDetails.createdAt).toLocaleDateString()}</p>
                 <p>Last updated: {new Date(showDetails.updatedAt).toLocaleDateString()}</p>
+                </div>
+                <div>
+                  <button
+              onClick={() => setShowDetails(null)}
+              className=" bg-red-400 text-white hover:text-black rounded-lg marker:transition-colors p-2"
+              aria-label="Close modal"
+            >
+              {/* <FiX className="text-2xl" /> */}
+              Close Modal
+            </button>
+                  </div>
               </div>
             </div>
           </div>

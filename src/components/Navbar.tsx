@@ -1,8 +1,8 @@
-'use client';
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import logoImg from '@/assets/om.png';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import logoImg from "@/assets/om.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,7 +23,12 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
           </svg>
         </button>
         <Link href="/" className="ml-4">
@@ -36,7 +41,7 @@ const Navbar = () => {
           <Link href="/">Home</Link>
         </li>
         <li className="hover:text-gray-300">
-          <Link href="/about">About Us</Link>
+          <Link href="/about">About Me</Link>
         </li>
         <li className="hover:text-gray-300">
           <Link href="/blogs">Blogs</Link>
@@ -49,16 +54,24 @@ const Navbar = () => {
       {menuOpen && (
         <ul className="absolute top-16 left-0 z-10 w-full bg-gray-900 text-white p-4 lg:hidden">
           <li className="py-2 px-4 hover:bg-gray-700">
-            <Link href="/" onClick={toggleMenu}>Home</Link>
+            <Link href="/" onClick={toggleMenu}>
+              Home
+            </Link>
           </li>
           <li className="py-2 px-4 hover:bg-gray-700">
-            <Link href="/about" onClick={toggleMenu}>About Us</Link>
+            <Link href="/about" onClick={toggleMenu}>
+              About Us
+            </Link>
           </li>
           <li className="py-2 px-4 hover:bg-gray-700">
-            <Link href="/blogs" onClick={toggleMenu}>Blogs</Link>
+            <Link href="/blogs" onClick={toggleMenu}>
+              Blogs
+            </Link>
           </li>
           <li className="py-2 px-4 hover:bg-gray-700">
-            <Link href="/contact" onClick={toggleMenu}>Contact</Link>
+            <Link href="/contact" onClick={toggleMenu}>
+              Contact
+            </Link>
           </li>
         </ul>
       )}

@@ -24,7 +24,7 @@ const Experience = () => {
   useEffect(() => {
     const fetchExperiences = async () => {
       try {
-        const response = await fetch('https://portfolio-server-mocha-omega.vercel.app/api/experience');
+        const response = await fetch(`https://portfolio-server-mocha-omega.vercel.app/api/experience`);
         if (!response.ok) {
           throw new Error('Failed to fetch experiences');
         }

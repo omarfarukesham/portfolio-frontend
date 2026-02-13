@@ -5,8 +5,9 @@ import BlogsPage from "./blogs/page";
 import Footer from "@/components/Footer";
 import SkillsSection from "@/components/Skills";
 import Experience from "@/components/Experience";
-import ContactNow from "@/components/contactNow";
+// import ContactNow from "@/components/contactNow";
 import ProjectsSection from "@/components/ProjectSection";
+import TestimonialPage from "@/components/Testimonial";
 // import ProjectsSection from "./projects/page";
 
 export default function Home() {
@@ -18,10 +19,9 @@ export default function Home() {
       <SkillsSection />
       <ProjectsSection />
       <BlogsPage />
-      {/* <TestimonialPage /> */}
-      <ContactNow />
+      <TestimonialPage />
+      {/* <ContactNow /> */}
       <Footer />
-     
     </div>
   );
 }

@@ -1,84 +1,256 @@
-import Image from 'next/image';
-import profileImg from '@/assets/devOmar.png'; 
-import Link from 'next/link';
-import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
+import Link from "next/link";
+import {
+  FaShieldAlt,
+  FaCloud,
+  FaCogs,
+  FaDatabase,
+  FaCode,
+} from "react-icons/fa";
 
 export const metadata = {
-  title: "About Me",
-  description: "Learn more about Mohammad Anas, an experienced administrator with over 4 years of experience in SAP and administrative management.",
+  title: "About Me | Omar Faruk",
+  description:
+    "Full-stack Developer with 4+ years of experience building scalable, secure, high-performance web applications using Node.js, NestJS, React, MongoDB, and modern DevOps workflows.",
 };
+
+const skills = [
+  {
+    title: "Frontend",
+    icon: <FaCode />,
+    items: ["React.js", "Next.js", "Vue.js", "Redux", "Tailwind CSS"],
+  },
+  {
+    title: "Backend",
+    icon: <FaCogs />,
+    items: ["Node.js", "NestJS", "Express", "Microservices", "REST APIs"],
+  },
+  {
+    title: "Database",
+    icon: <FaDatabase />,
+    items: ["MongoDB", "PostgreSQL", "Redis", "Prisma ORM", "Mongoose"],
+  },
+  {
+    title: "DevOps / Cloud",
+    icon: <FaCloud />,
+    items: ["AWS", "CI/CD pipelines", "Docker", "DigitalOcean", "jenkins"],
+  },
+  {
+    title: "Security",
+    icon: <FaShieldAlt />,
+    items: [
+      "JWT",
+      "API hardening",
+      "OWASP best practices",
+      "Secure-by-default mindset",
+    ],
+  },
+];
+
+const tools = ["JIRA", "Git", "Micro Frontend architecture"];
+
+const gradientBtn =
+  "bg-gradient-to-r from-black to-[#08a9af] hover:from-[#08a9af] hover:to-black text-white px-6 py-2 rounded-lg transition duration-300";
 
 export default function AboutPage() {
   return (
-    <main className="w-[90%] mx-auto min-h-screen py-16">
-      <section className="flex flex-col md:flex-row items-center">
-        {/* Profile Image */}
-        <div className="rounded-full overflow-hidden mb-8 md:mb-0 md:mr-12">
-          <Image src={profileImg} alt="Mohammad Anas Profile" className="object-cover" />
+    <main className="min-h-screen bg-white">
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
+        <div className="w-[92%] max-w-7xl mx-auto py-14 md:py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-slate-700 shadow-sm">
+              <span className="inline-block h-2 w-2 rounded-full bg-[#08a9af]" />
+              Full-stack Developer • 4+ years
+            </div>
+
+            <h1 className="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
+              Full-stack Developer focused on{" "}
+              <span className="bg-gradient-to-r from-black to-[#08a9af] bg-clip-text text-transparent">
+                scalable, secure, high-performance
+              </span>{" "}
+              systems
+            </h1>
+
+            <p className="mt-5 text-base md:text-lg leading-relaxed text-slate-700">
+              Full-stack Developer with hands-on 4+ years of experience building
+              scalable, secure, and high-performance applications. I work across
+              frontend and backend stacks with a strong focus on clean
+              architecture, microservices, and robust backend engineering.
+            </p>
+
+            <p className="mt-4 text-base md:text-lg leading-relaxed text-slate-700">
+              Experienced in REST APIs, authentication systems, CI/CD pipelines,
+              AWS services, Docker, and modern deployment strategies. I value
+              continuous learning, team collaboration, and shipping meaningful
+              products that create measurable business impact.
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Link href="/projects" className={gradientBtn}>
+                View Projects
+              </Link>
+
+              <Link
+                href="/resume"
+                className="inline-flex items-center justify-center px-6 py-2 rounded-lg border border-slate-200 bg-white text-slate-900 shadow-sm hover:bg-slate-50 transition duration-300"
+              >
+                View Resume
+              </Link>
+            </div>
+
+            {/* quick facts */}
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-xs font-semibold text-slate-500">Core</p>
+                <p className="mt-1 font-semibold text-slate-900">
+                  Node.js • NestJS • React
+                </p>
+                <p className="mt-2 text-sm text-slate-700">
+                  Production-grade apps and APIs.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-xs font-semibold text-slate-500">DevOps</p>
+                <p className="mt-1 font-semibold text-slate-900">
+                  CI/CD • Docker • AWS
+                </p>
+                <p className="mt-2 text-sm text-slate-700">
+                  Automated delivery and deployments.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-xs font-semibold text-slate-500">Security</p>
+                <p className="mt-1 font-semibold text-slate-900">
+                  JWT • API hardening
+                </p>
+                <p className="mt-2 text-sm text-slate-700">
+                  Secure-by-default mindset.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        {/* About Section */}
-        <div className="text-gray-800">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">About Me</h1>
-          <p className="text-lg leading-relaxed">
-            I am a skilled <span className="font-semibold">Administrator</span> with over <span className="font-semibold">4 years of experience</span> in managing administrative tasks and SAP support. Currently working at <span className="font-semibold">SHANAMIN</span> in Dammam, Saudi Arabia, I specialize in vendor registration, system maintenance, and troubleshooting within the SAP environment.
-          </p>
-          <p className="text-lg leading-relaxed mt-4">
-            My expertise includes managing procurement processes, contract handling, and ensuring compliance with company policies and regulatory standards. I have a proven track record of streamlining workflows and enhancing system efficiency.
-          </p>
-          <p className="text-lg leading-relaxed mt-4">
-            I am passionate about improving administrative procedures and building effective communication channels to resolve operational issues quickly and efficiently.
-          </p>
-        </div>
       </section>
 
-      {/* Technical Skills */}
-      <section className="mt-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Key Skills</h2>
-        <ul className="list-disc list-inside space-y-2 text-black">
-          <li>SAP system administration and troubleshooting</li>
-          <li>Vendor registration and management</li>
-          <li>Procurement and contract handling</li>
-          <li>Regulatory compliance and documentation</li>
-          <li>Workflow optimization and system efficiency</li>
-        </ul>
-      </section>
-
-      {/* Work Philosophy */}
-      <section className="mt-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Work Philosophy</h2>
-        <p className="text-lg leading-relaxed text-black">
-          I believe in maintaining accuracy, improving system processes, and fostering smooth communication between vendors and teams. I strive to enhance efficiency and resolve issues effectively.
-        </p>
-      </section>
-
-      {/* Contact Section */}
-      <section className="mt-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Me</h2>
-        <p className="text-lg leading-relaxed text-black">
-          Feel free to reach out if you have any questions or need professional support. I’m open to discussing new opportunities and collaborations.
-        </p>
-
-        <div className="mt-6 space-y-4">
-          <div className="flex items-center space-x-4">
-            <FaEnvelope className="text-blue-500 text-2xl" />
-            <p className="text-lg text-black">
-              <span className="font-semibold">Email:</span> <a href="mailto:anas@example.com" className="text-blue-500 hover:underline">anas@example.com</a>
+      {/* TECH STACK */}
+      <section className="w-[92%] max-w-6xl mx-auto py-14">
+        <div className="flex items-end justify-between gap-6 flex-wrap">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+              Tech Stack Highlights
+            </h2>
+            <p className="mt-2 text-slate-700">
+              A practical stack I use to ship production-ready solutions.
             </p>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <FaLinkedin className="text-blue-600 text-2xl" />
-            <p className="text-lg text-black">
-              <span className="font-semibold">LinkedIn:</span> <Link href="https://linkedin.com/in/anas" className="text-blue-500 hover:underline" target="_blank">https://www.linkedin.com/in/anas</Link>
+          <Link href="/skills" className={gradientBtn}>
+            Explore Skills
+          </Link>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {skills.map((s) => (
+            <div
+              key={s.title}
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+            >
+              <div className="flex items-center gap-3">
+                <div className="grid place-items-center h-11 w-11 rounded-xl bg-slate-900 text-white shadow-sm">
+                  <span className="text-xl">{s.icon}</span>
+                </div>
+                <div>
+                  <p className="text-lg font-semibold text-slate-900">
+                    {s.title}
+                  </p>
+                  <p className="text-sm text-slate-600">
+                    Key tools & frameworks
+                  </p>
+                </div>
+              </div>
+
+              <ul className="mt-4 space-y-2 text-slate-700">
+                {s.items.map((it) => (
+                  <li key={it} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#08a9af]" />
+                    <span>{it}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
+            <div className="flex items-center gap-3">
+              <div className="grid place-items-center h-11 w-11 rounded-xl bg-slate-900 text-white shadow-sm">
+                <FaCode className="text-xl" />
+              </div>
+              <div>
+                <p className="text-lg font-semibold text-slate-900">
+                  Tools & Practices
+                </p>
+                <p className="text-sm text-slate-600">How I work day-to-day</p>
+              </div>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              {tools.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm text-slate-700"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <p className="mt-4 text-slate-700">
+              I’m passionate about continuous learning, team collaboration, and
+              delivering meaningful products that create business value.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="flex items-center space-x-4">
-            <FaGithub className="text-gray-800 text-2xl" />
-            <p className="text-lg text-black">
-              <span className="font-semibold">GitHub:</span> <Link href="https://github.com/anas" className="text-blue-500 hover:underline" target="_blank">https://github.com/anas</Link>
-            </p>
+      {/* WORK PHILOSOPHY */}
+      <section className="bg-slate-50 border-y border-slate-200">
+        <div className="w-[92%] max-w-6xl mx-auto py-14">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+            Engineering Values
+          </h2>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+              <p className="font-semibold text-slate-900">Architecture first</p>
+              <p className="mt-2 text-slate-700">
+                Clean boundaries, scalable design, and maintainable codebases.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+              <p className="font-semibold text-slate-900">
+                Security by default
+              </p>
+              <p className="mt-2 text-slate-700">
+                JWT auth, API hardening, and practical security best practices.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+              <p className="font-semibold text-slate-900">Ship & iterate</p>
+              <p className="mt-2 text-slate-700">
+                CI/CD delivery, quality mindset, and continuous improvement.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <Link href="/contact" className={gradientBtn}>
+              Let’s Work Together
+            </Link>
           </div>
         </div>
       </section>
