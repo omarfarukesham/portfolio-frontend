@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logoImg from "@/assets/logo.png";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,7 +32,7 @@ const Navbar = () => {
           </svg>
         </button>
         <Link href="/" className="ml-4">
-          <Image src={logoImg} alt="Logo" width={100} height={100} />
+          <Image src={logo} alt="Logo" width={100} height={100} />
         </Link>
       </div>
 
